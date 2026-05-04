@@ -1,0 +1,63 @@
+name: Chapter Canonicalize
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'Chapter10_96Path_Extended_Channel_Map.txt'
+      - 'scripts/canonicalize_chapter10.py'
+      - 'schemas/chapter10.schema.json'
+  pull_request:
+    paths:
+      - 'Chapter10_96Path_Extended_Channel_Map.txt'
+      - 'scripts/canonicalize_chapter10.py'
+      - 'schemas/chapter10.schema.json'
+  workflow_dispatch:
+
+jobs:
+  canonicalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema
+
+      - name: Run canonicalization
+        id: canonicalize
+        run: |
+          python3 scripts/canonicalize_chapter10.py Chapter10_96Path_Extended_Channel_Map.txt             --schema schemas/chapter10.schema.json             --out artifacts/chapter10.canonical.json             --pretty artifacts/chapter10.canonical.pretty.json
+
+      - name: Determinism test
+        run: |
+          cp artifacts/chapter10.canonical.json /tmp/chapter10.first.json
+          python3 scripts/canonicalize_chapter10.py Chapter10_96Path_Extended_Channel_Map.txt             --schema schemas/chapter10.schema.json             --out artifacts/chapter10.canonical.json             --pretty artifacts/chapter10.canonical.pretty.json
+          diff -q artifacts/chapter10.canonical.json /tmp/chapter10.first.json
+
+      - name: Upload canonical artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chapter10-canonical-${{ github.sha }}
+          path: |
+            artifacts/chapter10.canonical.json
+            artifacts/chapter10.manifest.json
+          retention-days: 90
+
+      # NOTE: We do NOT auto-commit the artifact back to the repo.
+      # The canonical bytes live in the GitHub Actions artifact store.
+      # Promotion to the repo is a manual gate requiring human review + detached HSM signature.
+      - name: Summary
+        run: |
+          echo "Canonical artifact generated." >> $GITHUB_STEP_SUMMARY
+          echo "- Artifact: artifacts/chapter10.canonical.json" >> $GITHUB_STEP_SUMMARY
+          echo "- Manifest: artifacts/chapter10.manifest.json" >> $GITHUB_STEP_SUMMARY
+          echo "SHA256: $(sha256sum artifacts/chapter10.canonical.json | cut -d' ' -f1)" >> $GITHUB_STEP_SUMMARY

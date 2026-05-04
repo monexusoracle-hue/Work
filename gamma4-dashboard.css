@@ -1,0 +1,37 @@
+/* Gamma4 Sentinel Dashboard Styles */
+/* Tailwind-compatible utility classes */
+
+.gamma4-dashboard {
+  --phi: 1.618;
+  --phi-ms: 2618ms;
+  --color-bg: #020617;
+  --color-panel: #0f172a;
+  --color-border: #1e293b;
+  --color-text: #f1f5f9;
+  --color-muted: #64748b;
+  --color-emerald: #10b981;
+  --color-amber: #f59e0b;
+  --color-rose: #f43f5e;
+  --color-purple: #a855f7;
+  --color-indigo: #6366f1;
+}
+
+.gamma4-pulse {
+  animation: phi-pulse var(--phi-ms) ease-in-out infinite;
+}
+
+@keyframes phi-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.618; }
+}
+
+.gamma4-seal {
+  border: 1px solid var(--color-border);
+  background: var(--color-panel);
+}
+
+.gamma4-decree {
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

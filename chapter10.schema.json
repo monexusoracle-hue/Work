@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://thearchitect128/schemas/chapter10.schema.json",
+  "title": "Chapter10 Canonical Lattice Map",
+  "description": "Deterministic canonical schema for the 96-path Extended Lattice.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "canonicalizerVersion",
+    "sourceDigest",
+    "guardians"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "v2.0.0",
+      "description": "Schema version. Must match the canonicalizer."
+    },
+    "canonicalizerVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-.+)?$",
+      "description": "Version of the canonicalizer that produced this artifact."
+    },
+    "sourceDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 of the raw source file in hex."
+    },
+    "guardians": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "paths"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "paths": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "pathId",
+                "guardian",
+                "channel",
+                "hexagrams",
+                "notes",
+                "device",
+                "thresholds",
+                "verification"
+              ],
+              "properties": {
+                "pathId": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 96
+                },
+                "guardian": {
+                  "type": "string"
+                },
+                "channel": {
+                  "type": "string",
+                  "enum": [
+                    "TB",
+                    "QPC",
+                    "BFM",
+                    "MB",
+                    "DNC"
+                  ]
+                },
+                "hexagrams": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "notes": {
+                  "type": "string"
+                },
+                "device": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "model": {
+                      "type": "string"
+                    },
+                    "specs": {
+                      "type": "object"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "thresholds": {
+                  "type": "object",
+                  "description": "Measurement thresholds. Values must be integer or string to avoid float canonicalization issues."
+                },
+                "verification": {
+                  "type": "object",
+                  "properties": {
+                    "protocol": {
+                      "type": "string"
+                    },
+                    "challenge": {
+                      "type": "string"
+                    },
+                    "falsifyCriteria": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

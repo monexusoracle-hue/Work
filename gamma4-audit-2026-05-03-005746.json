@@ -1,0 +1,165 @@
+{
+  "schema": "nexus-gamma4-audit-v1",
+  "exported_at": "2026-05-03T04:57:46.126Z",
+  "session_id": "local-1777784266126",
+  "lattice_version": "4.0",
+  "mfcs_endpoint": "AUTONOMOUS",
+  "nexus_sentinel": {
+    "status": "OFFLINE",
+    "envelope": {
+      "activeFacet": "phi-A.marginal",
+      "margin": 0.9933,
+      "supportGap": 0.6113,
+      "lawCompliance": {
+        "phi-A": "compliant",
+        "guardian-accord": "marginal",
+        "breath-sync": "compliant"
+      },
+      "hardStop": false,
+      "latch": false,
+      "controlMode": "HOLD",
+      "traceLabel": "phi-A.marginal · autonomous",
+      "timestamp": 1777784264858
+    },
+    "directive": {
+      "approved": true,
+      "hysteresisScore": 0.9933,
+      "persistenceRequired": 5,
+      "gainMatrix": [
+        0.9,
+        0.899,
+        0.811,
+        0.9,
+        0.81
+      ],
+      "formalLabel": "PHI_A_MARGINAL",
+      "controlMode": "HOLD",
+      "override": false,
+      "lawViolations": [
+        "guardian-accord.dragon"
+      ],
+      "message": "Violations: guardian-accord.dragon",
+      "fromMFCS": false
+    },
+    "hysteresis_score": 0.5,
+    "last_sync": null,
+    "signal_history": [
+      0.08325836541599935,
+      0.023058197813505477,
+      -0.0093789791138612,
+      -0.009425456517477636,
+      -0.009279464838439368,
+      -0.005574181533334083,
+      -0.005036253828296568,
+      -0.017978949619131324,
+      -0.011787626038719426,
+      -0.0006147296102918046,
+      -0.0017687367186036765,
+      -0.0023435501667761413,
+      -0.0008748283254425213,
+      -0.0067938997670451695,
+      -0.00041921700636188275,
+      0.000403950320477936,
+      -0.0009905351953337221,
+      0.0006798044837095091,
+      0.0044054580521723855,
+      0.0016008553025324834,
+      -0.002408219793545198,
+      -0.0027125799539957293,
+      -0.0009619273562304978,
+      0.0012145475528075184,
+      -0.0032046031855405346,
+      -0.005948734412041405,
+      -0.003088187307604927,
+      -0.003919072499505412,
+      -0.004753273774521519,
+      -0.010863938738904039,
+      -0.006934616466222433,
+      -0.003902930525124415,
+      -0.007590744231054131,
+      -0.004708755062451719,
+      -0.007795331623678577,
+      -0.0040967192681787,
+      -0.000019793777758778108,
+      -0.002531854641559521,
+      -0.006690153822964298
+    ],
+    "audit_log": [
+      {
+        "ts": 1777784246538,
+        "chainHead": "464d1f40",
+        "action": "buy",
+        "approved": true,
+        "facet": "phi-A.marginal",
+        "margin": 0.9961,
+        "source": "LOCAL"
+      },
+      {
+        "ts": 1777784249129,
+        "chainHead": "467b0273",
+        "action": "hold",
+        "approved": true,
+        "facet": "phi-A.marginal",
+        "margin": 0.9924,
+        "source": "LOCAL"
+      },
+      {
+        "ts": 1777784251744,
+        "chainHead": "968a0383",
+        "action": "hold",
+        "approved": true,
+        "facet": "phi-A.marginal",
+        "margin": 0.9953,
+        "source": "LOCAL"
+      },
+      {
+        "ts": 1777784254357,
+        "chainHead": "27b55448",
+        "action": "hold",
+        "approved": true,
+        "facet": "phi-A.marginal",
+        "margin": 0.9922,
+        "source": "LOCAL"
+      },
+      {
+        "ts": 1777784257037,
+        "chainHead": "cd086623",
+        "action": "hold",
+        "approved": true,
+        "facet": "phi-A.marginal",
+        "margin": 0.9959,
+        "source": "LOCAL"
+      },
+      {
+        "ts": 1777784259639,
+        "chainHead": "ded651b2",
+        "action": "hold",
+        "approved": true,
+        "facet": "phi-A.marginal",
+        "margin": 1,
+        "source": "LOCAL"
+      },
+      {
+        "ts": 1777784262252,
+        "chainHead": "01507dd4",
+        "action": "hold",
+        "approved": true,
+        "facet": "phi-A.marginal",
+        "margin": 0.9975,
+        "source": "LOCAL"
+      },
+      {
+        "ts": 1777784264865,
+        "chainHead": "dc02c6da",
+        "action": "hold",
+        "approved": true,
+        "facet": "phi-A.marginal",
+        "margin": 0.9933,
+        "source": "LOCAL"
+      }
+    ]
+  },
+  "risk_matrix": null,
+  "gamma4_sentinel": null,
+  "sha256": "a070720ca8bda83ff7bec1814bdbd984065871750fc90e5df5fda553869d27fe"
+}

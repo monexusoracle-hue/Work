@@ -1,0 +1,63 @@
+name: MFCS-OMEGA
+
+on:
+  push:
+    paths:
+      - "mfcs-omega/**"
+      - ".github/workflows/mfcs-omega.yml"
+  pull_request:
+    paths:
+      - "mfcs-omega/**"
+      - ".github/workflows/mfcs-omega.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mfcs-omega
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate repository structure
+        run: python tools/validate_repo.py
+
+      - name: Run mirror unit tests
+        run: python -m unittest tests/test_build_mirror.py
+
+  verify:
+    needs: validate
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mfcs-omega
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Download TLA+ tools
+        run: |
+          mkdir -p .cache
+          curl -fsSL https://github.com/tlaplus/tlaplus/releases/latest/download/tla2tools.jar -o .cache/tla2tools.jar
+
+      - name: Run formal verification
+        env:
+          TLA_JAR: ${{ github.workspace }}/mfcs-omega/.cache/tla2tools.jar
+        run: python tools/verify.py

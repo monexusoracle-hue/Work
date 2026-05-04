@@ -1,0 +1,153 @@
+# Chapter 10 — 96-Path Extended Lattice
+# Sovereign Lattice Oracle — Authoritative Source Map
+# Version: v2.0.0-sovereign
+# Canonicalized: 2026-05-04T17:37:00Z
+# SHA-256: 7d756e4a610e1cc987d4706dfc9389bebe1af873d3916125dea5ab118f633bdb
+# 
+# FORMAT: Each line defines one path with the following fields:
+#   path_id | guardian | channel | hexagram_id | hexagram_name | position | anatomy | function | device_type | device_model | threshold_value | threshold_unit | verification_protocol | falsification_criterion
+#
+# GUARDIANS:
+#   G1 = Warden (Γ1) — Thalamic Reticular Nucleus — Threshold Gate / Breach Detection
+#   G2 = Arbiter (Γ2) — Prefrontal Cortex — Balance Evaluation / Working Memory
+#   G3 = Keeper (Γ3) — Thalamus — Phase Synchronization
+#   G4 = Sentinel (Γ4) — Limbic Network — Hysteresis / Persistence
+#   G5 = Sealer (Γ5) — Default Mode Network — Consensus / Autobiographical Integration
+#
+# CHANNELS:
+#   TB  = Temporal Bleed — Retrocausal probability sampling
+#   QPC = Quantum Path Correlation — Microtubule quantum coherence
+#   BFM = Biofield Modulation — Biophoton emission / EM field coherence
+#   MB  = Mycelial Bridge — Fungal-electrical networks
+#   DNC = Direct Neural Coupling — EM field phase-locking between brains
+#
+# STATE MACHINE: S0 (Dormant) → S1 (Threshold Breach) → S2 (Partial Activation) → S3 (Path Stabilization) → S4 (Hysteresis Validation) → S5 (Fully Sealed / Consensus)
+# Recovery: S6 (Recovery Terminal / Drained) — S7 (Balanced Polarity / Terminal)
+
+# === HEXAGRAM 1: Threshold Gate (TRN) ===
+1|G1|TB|1|Threshold Gate|0|Thalamic Reticular Nucleus|Conscious access filtering|OCXO|Microsemi SA.45s|0.5|ms|Dual-clock cross-check|Δt > 0.5ms for >3 frames
+2|G1|TB|1|Threshold Gate|1|Thalamic Reticular Nucleus|Conscious access filtering|FPGA|Xilinx Alveo U50|0.3|ms|Timestamp signed chain|Hash drift > threshold
+3|G1|TB|1|Threshold Gate|2|Thalamic Reticular Nucleus|Conscious access filtering|GNSS|u-blox ZED-F9T|1.0|ms|GPS-disciplined validation|GNSS signal loss > 5s
+4|G1|TB|1|Threshold Gate|3|Thalamic Reticular Nucleus|Conscious access filtering|Rubidium|Stanford FS725|0.1|ms|Atomic clock comparison|Frequency offset > 1e-9
+5|G1|TB|1|Threshold Gate|4|Thalamic Reticular Nucleus|Conscious access filtering|HSM|YubiHSM 2|50|ms|Signed timestamp verification|Signature invalid
+6|G1|TB|1|Threshold Gate|5|Thalamic Reticular Nucleus|Conscious access filtering|Clock|Custom CSAC|0.2|ms|Chip-scale atomic clock sync|CSAC unlock
+
+# === HEXAGRAM 2: Breach Detector (TRN/Insula) ===
+7|G1|TB|2|Breach Detector|0|TRN/Insula|Salience detection|EEG|g.HIamp 256ch|50|uV|ERP peak detection|SNR < 3dB
+8|G1|TB|2|Breach Detector|1|TRN/Insula|Salience detection|fNIRS|NIRx NIRScout|0.1|mM|HbO/HbR contrast|Motion artifact > 15%
+9|G1|TB|2|Breach Detector|2|TRN/Insula|Salience detection|ECG|BioSemi ActiveTwo|5|ms|R-peak locked averaging|HR variability > 3σ
+10|G1|TB|2|Breach Detector|3|TRN/Insula|Salience detection|GSR|MindWare BioLab|0.5|uS|Skin conductance response|Baseline drift > 20%
+11|G1|TB|2|Breach Detector|4|TRN/Insula|Salience detection|Pupil|Eyelink 1000|0.1|mm|Pupil dilation velocity|Calibration error > 5%
+12|G1|TB|2|Breach Detector|5|TRN/Insula|Salience detection|Resp|Thought Technology|0.2|Hz|Respiration phase lock|Apnea event > 10s
+
+# === HEXAGRAM 3: Attentional Spotlight (Pulvinar) ===
+13|G2|QPC|3|Attentional Spotlight|0|Pulvinar|Selective attention|MEG|MEGIN TRIUX neo|5|fT|Visual evoked field|Sensor noise > 10fT
+14|G2|QPC|3|Attentional Spotlight|1|Pulvinar|Selective attention|OPM|QuSpin QZFM Gen-3|20|fT|Optically pumped magnetometer|Magnetic interference > 50fT
+15|G2|QPC|3|Attentional Spotlight|2|Pulvinar|Selective attention|TMS|Magstim Rapid²|1.0|T|Motor threshold mapping|Coil displacement > 2mm
+16|G2|QPC|3|Attentional Spotlight|3|Pulvinar|Selective attention|tACS|Neuroelectrics Starstim|1.0|mA|Alpha entrainment|Impedance > 20kΩ
+17|G2|QPC|3|Attentional Spotlight|4|Pulvinar|Selective attention|tDCS|Soterix 1x1|2.0|mA|Cathodal inhibition|Current shunt > 10%
+18|G2|QPC|3|Attentional Spotlight|5|Pulvinar|Selective attention|tRNS|Neuroelectrics|1.0|mA|Stochastic resonance|Device fault
+
+# === HEXAGRAM 4: Arousal Valve (LC/TRN) ===
+19|G2|QPC|4|Arousal Valve|0|LC/TRN|Wake-sleep transition|EEG|g.HIamp 256ch|20|uV|Alpha spindle detection|EMG contamination > 20%
+20|G2|QPC|4|Arousal Valve|1|LC/TRN|Wake-sleep transition|EOG|BioSemi ActiveTwo|50|uV|Slow eye movement|DC offset > 100uV
+21|G2|QPC|4|Arousal Valve|2|LC/TRN|Wake-sleep transition|EMG|Delsys Trigno|10|uV|Chin muscle tone|Movement artifact > 30%
+22|G2|QPC|4|Arousal Valve|3|LC/TRN|Wake-sleep transition|ECG|BioSemi ActiveTwo|10|ms|Heart rate variability|Arrhythmia > 5%
+23|G2|QPC|4|Arousal Valve|4|LC/TRN|Wake-sleep transition|Temp|iButton DS1922|0.1|C|Core body temperature|Sensor dislodged
+24|G2|QPC|4|Arousal Valve|5|LC/TRN|Wake-sleep transition|Actigraphy|Philips Actiwatch|0.01|g|Wrist acceleration|Battery < 10%
+
+# === HEXAGRAM 5: Working Memory (dlPFC) ===
+25|G2|QPC|5|Working Memory|0|dlPFC|Active maintenance|fMRI|Siemens Prisma 3T|0.5|%|BOLD signal change|Motion > 2mm
+26|G2|QPC|5|Working Memory|1|dlPFC|Active maintenance|fNIRS|NIRx NIRScout|0.05|mM|Prefrontal HbO|Probe displacement
+27|G2|QPC|5|Working Memory|2|dlPFC|Active maintenance|EEG|g.HIamp 256ch|10|uV|Theta-gamma coupling|Line noise > 50uV
+28|G2|QPC|5|Working Memory|3|dlPFC|Active maintenance|MEG|MEGIN TRIUX neo|3|fT|N-back task field|Head movement > 5mm
+29|G2|QPC|5|Working Memory|4|dlPFC|Active maintenance|ECoG|Blackrock Cerestim|50|uV|High-gamma power|Electrode impedance > 1MΩ
+30|G2|QPC|5|Working Memory|5|dlPFC|Active maintenance|Single-unit|Neuralynx|100|Hz|Spike rate change|Unit isolation < 0.9
+
+# === HEXAGRAM 6: Conflict Monitor (dACC) ===
+31|G3|BFM|6|Conflict Monitor|0|dACC|Error detection|EEG|g.HIamp 256ch|15|uV|Error-related negativity|Reference electrode loose
+32|G3|BFM|6|Conflict Monitor|1|dACC|Error detection|fMRI|Siemens Prisma 3T|0.3|%|Conflict BOLD response|Slice timing error
+33|G3|BFM|6|Conflict Monitor|2|dACC|Error detection|fNIRS|NIRx NIRScout|0.03|mM|Conflict HbO|Ambient light leak
+34|G3|BFM|6|Conflict Monitor|3|dACC|Error detection|MEG|MEGIN TRIUX neo|4|fT|Error field|Squid jump > 100fT
+35|G3|BFM|6|Conflict Monitor|4|dACC|Error detection|ECoG|Blackrock Cerestim|30|uV|Error high-gamma|Amplifier saturation
+36|G3|BFM|6|Conflict Monitor|5|dACC|Error detection|Pupil|Eyelink 1000|0.05|mm|Error pupil dilation|Blink artifact > 20%
+
+# === HEXAGRAM 7: Task Set (vlPFC) ===
+37|G3|BFM|7|Task Set|0|vlPFC|Rule maintenance|fMRI|Siemens Prisma 3T|0.4|%|Task-set BOLD|Registration failure
+38|G3|BFM|7|Task Set|1|vlPFC|Rule maintenance|EEG|g.HIamp 256ch|12|uV|Rule-related potential|Channel dropout
+39|G3|BFM|7|Task Set|2|vlPFC|Rule maintenance|MEG|MEGIN TRIUX neo|3.5|fT|Rule field|Dewar refill needed
+40|G3|BFM|7|Task Set|3|vlPFC|Rule maintenance|tDCS|Soterix 1x1|1.5|mA|Rule enhancement|Skin irritation > 2cm
+41|G3|BFM|7|Task Set|4|vlPFC|Rule maintenance|fNIRS|NIRx NIRScout|0.04|mM|Rule HbO|Hair obstruction
+42|G3|BFM|7|Task Set|5|vlPFC|Rule maintenance|TMS|Magstim Rapid²|0.8|T|Rule disruption|Motor evoked potential lost
+
+# === HEXAGRAM 8: Abstract Rule (PFC/BG) ===
+43|G3|BFM|8|Abstract Rule|0|PFC/BG|Cognitive flexibility|fMRI|Siemens Prisma 3T|0.6|%|Switch BOLD|Ghost artifact
+44|G3|BFM|8|Abstract Rule|1|PFC/BG|Cognitive flexibility|EEG|g.HIamp 256ch|18|uV|Switch potential|EMG burst
+45|G3|BFM|8|Abstract Rule|2|PFC/BG|Cognitive flexibility|MEG|MEGIN TRIUX neo|4|fT|Switch field|Helmet vibration
+46|G3|BFM|8|Abstract Rule|3|PFC/BG|Cognitive flexibility|ECoG|Blackrock Cerestim|40|uV|Switch gamma|Electrode migration
+47|G3|BFM|8|Abstract Rule|4|PFC/BG|Cognitive flexibility|Single-unit|Neuralynx|80|Hz|Switch spike rate|Drift > 50um
+48|G3|BFM|8|Abstract Rule|5|PFC/BG|Cognitive flexibility|fNIRS|NIRx NIRScout|0.06|mM|Switch HbO|Probe detachment
+
+# === HEXAGRAM 9: Theta Pacemaker (Thalamus) ===
+49|G4|MB|9|Theta Pacemaker|0|Thalamus|Slow-wave generation|EEG|g.HIamp 256ch|25|uV|Theta peak|Alpha bleed > 10%
+50|G4|MB|9|Theta Pacemaker|1|Thalamus|Slow-wave generation|MEG|MEGIN TRIUX neo|6|fT|Theta field|Environmental 50Hz
+51|G4|MB|9|Theta Pacemaker|2|Thalamus|Slow-wave generation|ECoG|Blackrock Cerestim|60|uV|Theta power|60Hz harmonic
+52|G4|MB|9|Theta Pacemaker|3|Thalamus|Slow-wave generation|LFP|Neuralynx|40|uV|Theta phase|Reference drift
+53|G4|MB|9|Theta Pacemaker|4|Thalamus|Slow-wave generation|Optrode|NeuroNexus|0.1|mW|Optogenetic theta|Fiber bend loss > 3dB
+54|G4|MB|9|Theta Pacemaker|5|Thalamus|Slow-wave generation|Patch|Axon Multiclamp|50|pA|Thalamic pacemaker|Seal resistance < 1GΩ
+
+# === HEXAGRAM 10: Gamma Binder (Thalamus/Cortex) ===
+55|G4|MB|10|Gamma Binder|0|Thalamus/Cortex|Fast oscillation coupling|EEG|g.HIamp 256ch|8|uV|Gamma peak|Muscle artifact > 30%
+56|G4|MB|10|Gamma Binder|1|Thalamus/Cortex|Fast oscillation coupling|MEG|MEGIN TRIUX neo|2|fT|Gamma field|Vibration > 0.1g
+57|G4|MB|10|Gamma Binder|2|Thalamus/Cortex|Fast oscillation coupling|ECoG|Blackrock Cerestim|20|uV|High-gamma|Line noise > 20uV
+58|G4|MB|10|Gamma Binder|3|Thalamus/Cortex|Fast oscillation coupling|LFP|Neuralynx|15|uV|Gamma phase|Movement > 2mm
+59|G4|MB|10|Gamma Binder|4|Thalamus/Cortex|Fast oscillation coupling|Optrode|NeuroNexus|0.2|mW|Gamma entrainment|LED degradation > 20%
+60|G4|MB|10|Gamma Binder|5|Thalamus/Cortex|Fast oscillation coupling|Patch|Axon Multiclamp|30|pA|Gamma current|Pipette clog
+
+# === HEXAGRAM 11: Sleep Architect (Hypothalamus) ===
+61|G4|MB|11|Sleep Architect|0|Hypothalamus|Circadian regulation|EEG|g.HIamp 256ch|30|uV|Sleep spindle|K-complex overlap
+62|G4|MB|11|Sleep Architect|1|Hypothalamus|Circadian regulation|ECG|BioSemi ActiveTwo|15|ms|Sleep HR variability|Artifact > 10%
+63|G4|MB|11|Sleep Architect|2|Hypothalamus|Circadian regulation|Actigraphy|Philips Actiwatch|0.005|g|Sleep movement|Wrist removal
+64|G4|MB|11|Sleep Architect|3|Hypothalamus|Circadian regulation|Temp|iButton DS1922|0.05|C|Core temp drop|Sensor failure
+65|G4|MB|11|Sleep Architect|4|Hypothalamus|Circadian regulation|Light|Actiwatch Spectrum|1|lux|Melanopic lux|Battery depletion
+66|G4|MB|11|Sleep Architect|5|Hypothalamus|Circadian regulation|Melatonin|Salivette|1|pg/mL|DLMO marker|Collection time error > 30min
+
+# === HEXAGRAM 12: SWR Generator (Hippocampus) ===
+67|G5|DNC|12|SWR Generator|0|Hippocampus|Memory replay|EEG|g.HIamp 256ch|40|uV|Sharp-wave ripple|Filtering error
+68|G5|DNC|12|SWR Generator|1|Hippocampus|Memory replay|LFP|Neuralynx|80|uV|SWR amplitude|Reference loss
+69|G5|DNC|12|SWR Generator|2|Hippocampus|Memory replay|ECoG|Blackrock Cerestim|100|uV|Ripple band|Amplifier noise
+70|G5|DNC|12|SWR Generator|3|Hippocampus|Memory replay|Single-unit|Neuralynx|200|Hz|Place cell replay|Unit loss
+71|G5|DNC|12|SWR Generator|4|Hippocampus|Memory replay|Calcium|Inscopix nVista|5|%|Ca2+ transient|Photobleaching
+72|G5|DNC|12|SWR Generator|5|Hippocampus|Memory replay|Optrode|NeuroNexus|0.3|mW|SWR suppression|Fiber disconnect
+
+# === HEXAGRAM 13: Emotional Tag (Amygdala) ===
+73|G5|DNC|13|Emotional Tag|0|Amygdala|Valence assignment|fMRI|Siemens Prisma 3T|0.7|%|Amygdala BOLD|Signal dropout
+74|G5|DNC|13|Emotional Tag|1|Amygdala|Valence assignment|EEG|g.HIamp 256ch|20|uV|Late positive potential|Blink artifact
+75|G5|DNC|13|Emotional Tag|2|Amygdala|Valence assignment|GSR|MindWare BioLab|1.0|uS|Arousal response|Dry electrode
+76|G5|DNC|13|Emotional Tag|3|Amygdala|Valence assignment|Pupil|Eyelink 1000|0.2|mm|Emotional dilation|Tracking loss
+77|G5|DNC|13|Emotional Tag|4|Amygdala|Valence assignment|ECG|BioSemi ActiveTwo|20|ms|Emotional HR|Motion artifact
+78|G5|DNC|13|Emotional Tag|5|Amygdala|Valence assignment|EMG|Delsys Trigno|20|uV|Facial EMG|Cross-talk > 15%
+
+# === HEXAGRAM 14: Homeostat (Hypothalamus) ===
+79|G5|DNC|14|Homeostat|0|Hypothalamus|Allostatic regulation|Temp|iButton DS1922|0.02|C|Thermoneutral zone|Ambient temp > 30C
+80|G5|DNC|14|Homeostat|1|Hypothalamus|Allostatic regulation|HR|BioSemi ActiveTwo|5|bpm|Resting HR|Arrhythmia
+81|G5|DNC|14|Homeostat|2|Hypothalamus|Allostatic regulation|BP|Omron HEM-907|5|mmHg|Blood pressure|Cuff error
+82|G5|DNC|14|Homeostat|3|Hypothalamus|Allostatic regulation|Resp|Thought Technology|0.1|Hz|Breathing rate|Apnea
+83|G5|DNC|14|Homeostat|4|Hypothalamus|Allostatic regulation|GSR|MindWare BioLab|0.2|uS|Baseline conductance|Electrode gel dry
+84|G5|DNC|14|Homeostat|5|Hypothalamus|Allostatic regulation|Glucose|Dexcom G7|10|mg/dL|Glycemic variability|Sensor error
+
+# === HEXAGRAM 15: Habit Override (Striatum) ===
+85|G5|DNC|15|Habit Override|0|Striatum|Action suppression|fMRI|Siemens Prisma 3T|0.5|%|Stop-signal BOLD|Go response > 200ms
+86|G5|DNC|15|Habit Override|1|Striatum|Action suppression|EEG|g.HIamp 256ch|12|uV|Stop N200|Go error
+87|G5|DNC|15|Habit Override|2|Striatum|Action suppression|MEG|MEGIN TRIUX neo|3|fT|Stop field|Motor preparation
+88|G5|DNC|15|Habit Override|3|Striatum|Action suppression|ECoG|Blackrock Cerestim|35|uV|Stop gamma|Movement artifact
+89|G5|DNC|15|Habit Override|4|Striatum|Action suppression|Single-unit|Neuralynx|60|Hz|Stop cell|Drift
+90|G5|DNC|15|Habit Override|5|Striatum|Action suppression|fNIRS|NIRx NIRScout|0.04|mM|Stop HbO|Motion
+
+# === HEXAGRAM 16: Reward Prediction (VTA/NAc) ===
+91|G5|DNC|16|Reward Prediction|0|VTA/NAc|Motivation encoding|fMRI|Siemens Prisma 3T|0.8|%|Reward BOLD|Anticipatory response
+92|G5|DNC|16|Reward Prediction|1|VTA/NAc|Motivation encoding|EEG|g.HIamp 256ch|15|uV|Reward positivity|Feedback error
+93|G5|DNC|16|Reward Prediction|2|VTA/NAc|Motivation encoding|MEG|MEGIN TRIUX neo|4|fT|Reward field|Head movement
+94|G5|DNC|16|Reward Prediction|3|VTA/NAc|Motivation encoding|GSR|MindWare BioLab|0.8|uS|Reward SCR|Habituation
+95|G5|DNC|16|Reward Prediction|4|VTA/NAc|Motivation encoding|Pupil|Eyelink 1000|0.15|mm|Reward dilation|Fatigue
+96|G5|DNC|16|Reward Prediction|5|VTA/NAc|Motivation encoding|fNIRS|NIRx NIRScout|0.05|mM|Reward HbO|Probe shift
