@@ -1,0 +1,20 @@
+# Dockerfile — Reproducible Seal Verification Environment
+# Build: docker build -t seal-verify .
+# Run:   docker run -v $(pwd):/repo seal-verify python /repo/seal.py /repo/manifest.json --verify
+
+FROM python:3.12.3-slim-bookworm@sha256:2c51a42c5b30e2a0e3e8b52a1f5c3e8a1b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0
+
+# Pin to specific Debian snapshot for reproducibility
+RUN echo "deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/20240427T000000Z bookworm main" > /etc/apt/sources.list
+
+# Install dependencies with exact versions
+COPY requirements.txt /tmp/
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Create non-root user
+RUN useradd -m -u 1000 verifier
+USER verifier
+WORKDIR /repo
+
+# Default: verify seal
+CMD ["python", "seal.py", "manifest.json", "--verify"]
